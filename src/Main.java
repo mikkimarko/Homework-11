@@ -20,21 +20,17 @@ public class Main {
     }
 
     public static String appVersion (int OS, int clientDeviceYear){
-    int currentYear = LocalDate.now().getYear();
-    if (clientDeviceYear < currentYear){
-        if (OS == 0){
+    if (clientDeviceYear < 2015 && OS == 0){
             return "Установите облегченную версию приложения для iOS по ссылке";
-        }else{
+    } else if (clientDeviceYear < 2015 && OS == 1){
             return "Установите облегченную версию приложения для Android по ссылке";
-        }
-    }else{
-        if(OS ==0){
+    } else if (clientDeviceYear >= 2015 && OS == 0){
             return "Установите версию приложения для iOS по ссылке";
-        }else{
+    } else {
            return "Установите версию приложения для Android по ссылке";
         }
     }
-    }
+
 
 
     public static String delivery (int deliveryDistance){
@@ -48,6 +44,7 @@ public class Main {
             return "Доставки нет";
         }
     }
+
 
 
     public static void main(String[] args) {
@@ -66,6 +63,5 @@ public class Main {
 
         printSeparator();
 
-
-    }
+}
 }
